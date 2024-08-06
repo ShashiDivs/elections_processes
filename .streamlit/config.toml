@@ -1,0 +1,4 @@
+/your-streamlit-app-folder
+    /main.py
+    /.streamlit
+        /config.toml
