@@ -9,7 +9,7 @@ st.markdown("""
 
 
 import matplotlib.pyplot as plt
-from data_utils import load_data, search_by_name, filter_by_gender, people_in_age_range
+from data_utils import load_data, search_by_name, filter_by_gender, people_in_age_range,search_by_names
 
 
 data = load_data('thimmayapalli.csv')
@@ -33,22 +33,23 @@ ax.pie([male_count, female_count], labels=['Male', 'Female'], autopct='%1.1f%%',
 ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(fig)
 
-# Name search
-st.subheader('Search by Name')
-name_query = st.text_input("Enter the name to search:")
-if st.button('Search Name', key='name_search'):
-    name_results, name_count = search_by_name(data,name_query)
-    st.write(name_results)
+## Name search
+st.title('Search for Names')
+input_names = st.text_input("Enter name(s), separated by commas for multiple (e.g., kalvakuntala,juvvadi):")
+if st.button('Search'):
+    results, name_count = search_by_names(data, input_names)
     if name_count > 0:
         name_percentage = (name_count / total_voters) * 100
-        st.write(f"Number of people with name '{name_query}': {name_count}")
+        st.write(f"Number of people with name(s) '{input_names}': {name_count}")
         st.write(f"Percentage of total: {name_percentage:.2f}%")
         
         # Pie chart for name search distribution
         fig, ax = plt.subplots()
-        ax.pie([name_count, total_voters - name_count], labels=[name_query, 'Others'], autopct='%1.1f%%', startangle=90)
+        ax.pie([name_count, total_voters - name_count], labels=[input_names, 'Others'], autopct='%1.1f%%', startangle=90)
         ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         st.pyplot(fig)
+    else:
+        st.write("No results found.")
 
 # Gender filter
 st.subheader('Filter by Gender')

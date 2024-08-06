@@ -19,3 +19,11 @@ def people_in_age_range(data, min_age, max_age):
     """List all people within a specified age range."""
     filtered_data = data[(data['Age'] >= min_age) & (data['Age'] <= max_age)]
     return filtered_data, len(filtered_data)
+
+def search_by_names(data, input_names):
+    """Search and return records matching any of the input names."""
+    # Split the input string into names, strip spaces, and form a regex pattern
+    names_list = [name.strip() for name in input_names.split(',')]
+    pattern = '|'.join(names_list)
+    filtered_data = data[data['Name'].str.contains(pattern, case=False, na=False)]
+    return filtered_data, len(filtered_data)
