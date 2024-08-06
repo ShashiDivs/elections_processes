@@ -1,16 +1,16 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 from data_utils import load_data, search_by_name, filter_by_gender, people_in_age_range
-st.set_page_config(page_title='My App', page_icon=':tada:', layout='wide', initial_sidebar_state='collapsed', menu_items={'About': None})
+# st.set_page_config(page_title='My App', page_icon=':tada:', layout='wide', initial_sidebar_state='collapsed', menu_items={'About': None})
 
-# Hide the footer by injecting custom CSS
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+# # Hide the footer by injecting custom CSS
+# hide_streamlit_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 data = load_data('thimmayapalli.csv')
 

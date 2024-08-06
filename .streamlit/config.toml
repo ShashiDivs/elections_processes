@@ -1,4 +1,20 @@
-/your-streamlit-app-folder
-    /main.py
-    /.streamlit
-        /config.toml
+# File: .streamlit/config.toml
+
+# General page configuration
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+# Customize the appearance and behavior of the app's page
+[page]
+title = "My Streamlit App"
+favicon = "🚀"
+layout = "wide"
+initialSidebarState = "expanded"
+
+# Disable the hamburger menu (main menu)
+[mainMenu]
+enable = false
+
