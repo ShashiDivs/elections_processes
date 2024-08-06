@@ -9,7 +9,7 @@ gatherUsageStats = false
 
 # Customize the appearance and behavior of the app's page
 [page]
-title = "My Streamlit App"
+title = "Data Search of the Village"
 favicon = "🚀"
 layout = "wide"
 initialSidebarState = "expanded"
