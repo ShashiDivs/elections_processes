@@ -5,7 +5,7 @@ from data_utils import load_data, search_by_name, filter_by_gender, people_in_ag
 data = load_data('thimmayapalli.csv')
 
 # Streamlit user interface
-st.title('Data Search and Filter Application')
+st.title('Data Search of the Village')
 st.title("Thimmayepalle")
 
 # Display total voters and gender count
