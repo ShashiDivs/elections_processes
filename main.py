@@ -38,6 +38,7 @@ st.title('Search for Names')
 input_names = st.text_input("Enter name(s), separated by commas for multiple (e.g., kalvakuntala,juvvadi):")
 if st.button('Search'):
     results, name_count = search_by_names(data, input_names)
+    st.write(results)
     if name_count > 0:
         name_percentage = (name_count / total_voters) * 100
         st.write(f"Number of people with name(s) '{input_names}': {name_count}")
