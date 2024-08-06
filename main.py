@@ -61,7 +61,7 @@ if st.button('Filter Gender', key='gender_filter'):
 
 # Age filter
 st.subheader('People within a specified age range')
-min_age, max_age = st.slider('Select age range:', 0, 100, (20, 25))
+min_age, max_age = st.slider('Select age range:', 18, 100, (18, 25))
 if st.button('Show People Within Age Range', key='age_range'):
     age_results, age_count = people_in_age_range(data, min_age, max_age)
     st.write(age_results)
